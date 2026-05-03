@@ -1,0 +1,290 @@
+"Note: This is a visual studio code calculator program it is not a real program calculator"
+# Comprehensive Calculator Program in Python
+# This program provides a calculator with basic and advanced mathematical operations
+# It includes arithmetic operations, trigonometric functions, logarithms, and more
+# The code is structured as a class for better organization
+
+import math
+
+class Calculator:
+    """
+    A comprehensive calculator class that supports various mathematical operations.
+    
+    This class provides methods for basic arithmetic, advanced functions,
+    and trigonometric calculations.
+    """
+    
+    def __init__(self):
+        """
+        Initialize the Calculator instance.
+        
+        Currently, no initialization is required, but this method is here
+        for future extensions.
+        """
+        pass
+    
+    def add(self, a, b):
+        """
+        Perform addition of two numbers.
+        
+        Args:
+            a (float): First number
+            b (float): Second number
+            
+        Returns:
+            float: Sum of a and b
+        """
+        return a + b
+    
+    def subtract(self, a, b):
+        """
+        Perform subtraction of two numbers.
+        
+        Args:
+            a (float): Minuend
+            b (float): Subtrahend
+            
+        Returns:
+            float: Difference of a and b
+        """
+        return a - b
+    
+    def multiply(self, a, b):
+        """
+        Perform multiplication of two numbers.
+        
+        Args:
+            a (float): First factor
+            b (float): Second factor
+            
+        Returns:
+            float: Product of a and b
+        """
+        return a * b
+    
+    def divide(self, a, b):
+        """
+        Perform division of two numbers.
+        
+        Args:
+            a (float): Dividend
+            b (float): Divisor
+            
+        Returns:
+            float: Quotient of a divided by b
+            
+        Raises:
+            ValueError: If b is zero
+        """
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
+        return a / b
+    
+    def power(self, a, b):
+        """
+        Calculate a raised to the power of b.
+        
+        Args:
+            a (float): Base
+            b (float): Exponent
+            
+        Returns:
+            float: a raised to the power of b
+        """
+        return a ** b
+    
+    def square_root(self, a):
+        """
+        Calculate the square root of a number.
+        
+        Args:
+            a (float): Number to find square root of
+            
+        Returns:
+            float: Square root of a
+            
+        Raises:
+            ValueError: If a is negative
+        """
+        if a < 0:
+            raise ValueError("Cannot take square root of negative number")
+        return math.sqrt(a)
+    
+    def sine(self, a):
+        """
+        Calculate the sine of an angle in radians.
+        
+        Args:
+            a (float): Angle in radians
+            
+        Returns:
+            float: Sine of a
+        """
+        return math.sin(a)
+    
+    def cosine(self, a):
+        """
+        Calculate the cosine of an angle in radians.
+        
+        Args:
+            a (float): Angle in radians
+            
+        Returns:
+            float: Cosine of a
+        """
+        return math.cos(a)
+    
+    def tangent(self, a):
+        """
+        Calculate the tangent of an angle in radians.
+        
+        Args:
+            a (float): Angle in radians
+            
+        Returns:
+            float: Tangent of a
+        """
+        return math.tan(a)
+    
+    def logarithm(self, a, base=10):
+        """
+        Calculate the logarithm of a number with a given base.
+        
+        Args:
+            a (float): Number to find logarithm of
+            base (float): Base of the logarithm (default 10)
+            
+        Returns:
+            float: Logarithm of a with base
+            
+        Raises:
+            ValueError: If a is not positive
+        """
+        if a <= 0:
+            raise ValueError("Logarithm undefined for non-positive numbers")
+        return math.log(a, base)
+    
+    def factorial(self, a):
+        """
+        Calculate the factorial of a non-negative integer.
+        
+        Args:
+            a (int): Non-negative integer
+            
+        Returns:
+            int: Factorial of a
+            
+        Raises:
+            ValueError: If a is not a non-negative integer
+        """
+        if not isinstance(a, int) or a < 0:
+            raise ValueError("Factorial defined only for non-negative integers")
+        return math.factorial(a)
+
+def main():
+    """
+    Main function to run the calculator program.
+    
+    This function provides an interactive menu for users to select
+    operations and input values.
+    """
+    calc = Calculator()
+    
+    print("Welcome to the Comprehensive Calculator!")
+    print("This calculator supports various mathematical operations.")
+    print("Note: This is a visual studio code calculator program it is not a real program calculator")
+    print("\nAvailable operations:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Power")
+    print("6. Square Root")
+    print("7. Sine")
+    print("8. Cosine")
+    print("9. Tangent")
+    print("10. Logarithm")
+    print("11. Factorial")
+    print("0. Exit")
+    
+    while True:
+        try:
+            choice = int(input("\nEnter the number of the operation you want to perform: "))
+            
+            if choice == 0:
+                print("Thank you for using the calculator. Goodbye!")
+                break
+            
+            elif choice == 1:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                result = calc.add(a, b)
+                print(f"The sum of {a} and {b} is {result}")
+            
+            elif choice == 2:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                result = calc.subtract(a, b)
+                print(f"The difference of {a} and {b} is {result}")
+            
+            elif choice == 3:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                result = calc.multiply(a, b)
+                print(f"The product of {a} and {b} is {result}")
+            
+            elif choice == 4:
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                result = calc.divide(a, b)
+                print(f"The quotient of {a} divided by {b} is {result}")
+            
+            elif choice == 5:
+                a = float(input("Enter the base: "))
+                b = float(input("Enter the exponent: "))
+                result = calc.power(a, b)
+                print(f"{a} raised to the power of {b} is {result}")
+            
+            elif choice == 6:
+                a = float(input("Enter the number: "))
+                result = calc.square_root(a)
+                print(f"The square root of {a} is {result}")
+            
+            elif choice == 7:
+                a = float(input("Enter the angle in radians: "))
+                result = calc.sine(a)
+                print(f"The sine of {a} radians is {result}")
+            
+            elif choice == 8:
+                a = float(input("Enter the angle in radians: "))
+                result = calc.cosine(a)
+                print(f"The cosine of {a} radians is {result}")
+            
+            elif choice == 9:
+                a = float(input("Enter the angle in radians: "))
+                result = calc.tangent(a)
+                print(f"The tangent of {a} radians is {result}")
+            
+            elif choice == 10:
+                a = float(input("Enter the number: "))
+                base_input = input("Enter the base (press Enter for 10): ")
+                base = float(base_input) if base_input else 10
+                result = calc.logarithm(a, base)
+                print(f"The logarithm of {a} with base {base} is {result}")
+            
+            elif choice == 11:
+                a = int(input("Enter a non-negative integer: "))
+                result = calc.factorial(a)
+                print(f"The factorial of {a} is {result}")
+            
+            else:
+                print("Invalid choice. Please select a number from 0 to 11.")
+        
+        except ValueError as e:
+            print(f"Input error: {e}. Please enter valid numbers.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}. Please try again.")
+
+if __name__ == "__main__":
+    main()
+    #JEE Mains calculator 2026
